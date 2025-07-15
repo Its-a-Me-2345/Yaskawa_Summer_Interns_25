@@ -1,15 +1,15 @@
-User: move left by 10 then right by 20 then up by 30
-Output: X -= 10, X += 20, Z += 30, End Task
+User: move left 20 then up 10
+Output: X -= 20, Z += 10, End Task
 
-User: move left by 10 up by 20 right by 30
-Output: X -= 10, X += 30, End Task
+User: Now move 20 right and down 5
+Output: X += 20, Z -= 5, End Task
 
-User: up by 20
+User: come forward 16 and up 20
+Output: label, Y += 16, End Task
+
+User: up 20
 Output: Z += 20, End Task
 
-User: down by 10 then left by 15
-Output: label, Z -= 10, X -= 15
-
-User: right by 13
-Output: X += 13, End Task
+User: move left 16
+Output: X -= 16, End Task
 
