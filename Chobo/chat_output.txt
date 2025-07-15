@@ -1,0 +1,27 @@
+User: right 2
+Output: X += 2, End Task
+
+User: up 15
+Output: Z += 15, End Task
+
+User: left 6
+Output: X += 6, End Task
+
+User: move down by 16
+Output: Z -= 16, End Task
+
+User: move to the right by 18
+Output: label, X += 18, End Task
+
+User: move up by 19
+Output: Z += 19, End Task
+
+User: move forward by 16 and then to the right by 7
+Output: Y += 16, Z += 7, End Task
+
+User: down by 7
+Output: Z -= 7, End Task
+
+User: right by 7
+Output: X += 7, End Task
+
