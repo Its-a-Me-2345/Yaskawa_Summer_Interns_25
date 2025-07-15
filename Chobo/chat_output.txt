@@ -1,27 +1,24 @@
-User: right 2
-Output: X += 2, End Task
+User: right 25
+Output: X += 25, End Task
 
-User: up 15
-Output: Z += 15, End Task
+User: right 26
+Output: X += 26, End Task
 
-User: left 6
-Output: X += 6, End Task
+User: move to the left by 60
+Output: label, X -= 60, End Task
 
-User: move down by 16
-Output: Z -= 16, End Task
+User: move up by 50
+Output: Z += 50, End Task
 
-User: move to the right by 18
-Output: label, X += 18, End Task
+User: go forward by 10 then up by 15
+Output: Y += 10, Z += 15, End Task
 
-User: move up by 19
-Output: Z += 19, End Task
+User: go to the right by 12
+Output: label, X += 12, End Task
 
-User: move forward by 16 and then to the right by 7
-Output: Y += 16, Z += 7, End Task
+User: go to the right by 15 and down by 12 then move to the left the 15
+Output: label, X += 15, Z -= 12, Jump *label, End Task
 
-User: down by 7
-Output: Z -= 7, End Task
-
-User: right by 7
-Output: X += 7, End Task
+User: move left by 15
+Output: X -= 15, End Task
 
