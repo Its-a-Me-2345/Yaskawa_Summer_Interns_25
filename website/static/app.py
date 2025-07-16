@@ -1,10 +1,9 @@
-from flask import Flask, render_template, request,jsonify
+from flask import Flask, render_template, request, jsonify
 import csv
 import os
 from datetime import datetime
 from model_utils import model, tokenizer, device, evaluate
 from chat_utils import append_chat_to_file, extract_increments, write_csv, git_push
-import os
 
 app = Flask(__name__)
 
@@ -16,6 +15,11 @@ if not os.path.exists(LOG_FILE):
     with open(LOG_FILE, 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(['Timestamp', 'Command'])
+
+# 🔁 Clear once when app starts
+open("chat_output.txt", "w").close()
+with open("movement_increments.csv", "w") as f:
+    f.write("X,Y,Z\n")
 
 @app.route('/')
 def home():
@@ -43,7 +47,8 @@ def chatbot_api():
         write_csv(increments)
 
         try:
-            git_push()
+            git_push("movement_increments.csv")
+            git_push("chat_output.txt")
         except Exception as e:
             print("Git push failed:", e)
 
@@ -51,7 +56,6 @@ def chatbot_api():
     except Exception as e:
         print("🔥 Error in /chatbot/api:", e)
         return jsonify({"response": "Internal error occurred."}), 500
-
 
 @app.route('/control')
 def control():
@@ -87,11 +91,9 @@ def log_gesture():
     gesture = data.get('gesture')
     timestamp = data.get('timestamp')
 
-    # Use current time if not provided
     if not timestamp:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-    # Map gesture names to robot axis-direction commands
     gesture_map = {
         'victory': 'X+',
         'yo': 'X-',

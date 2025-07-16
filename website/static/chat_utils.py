@@ -42,7 +42,8 @@ def write_csv(increments, csv_path="movement_increments.csv"):
     df = pd.DataFrame(increments, columns=["X", "Y", "Z"])
     df.to_csv(csv_path, index=False)  # this overwrites the file
 
-def git_push(csv_file="movement_increments.csv"):
-    subprocess.run(["git", "add", csv_file], check=True)
+def git_push(file_name):
+    subprocess.run(["git", "add", file_name], check=True)
     subprocess.run(["git", "commit", "-m", "Auto update after chat"], check=True)
     subprocess.run(["git", "push"], check=True)
+
