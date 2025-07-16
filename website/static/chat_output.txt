@@ -7,3 +7,6 @@ Output: label, X += 16, End Task
 User: move up by 16
 Output: Z += 16, End Task
 
+User: move up 10
+Output: Z += 10, End Task
+
