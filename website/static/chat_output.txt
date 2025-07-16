@@ -4,3 +4,6 @@ Output: Z += 20, End Task
 User: move to the right by 16
 Output: label, X += 16, End Task
 
+User: move up by 16
+Output: Z += 16, End Task
+
