@@ -10,3 +10,6 @@ Output: Z += 16, End Task
 User: move up 10
 Output: Z += 10, End Task
 
+User: move left by 7
+Output: X -= 7, End Task
+
