@@ -22,3 +22,36 @@ Output: label, X += 15, Z -= 12, Jump *label, End Task
 User: move left by 15
 Output: X -= 15, End Task
 
+User: move up by 10 and right by 10 then left by 20
+Output: Z += 10 and X += 10, X -= 20
+
+User: 
+Output: End Task
+
+User: move up by 10
+Output: Z += 10, End Task
+
+User: move left by 20 and up by 10
+Output: X -= 20, Z += 10, End Task
+
+User: move left by 10 then right by 20 then up by 30
+Output: X -= 10, X += 20, Z += 30, End Task
+
+User: move left by 10 up by 20 right by 30
+Output: X -= 10, X += 30, End Task
+
+User: up by 20
+Output: Z += 20, End Task
+
+User: down by 10
+Output: Z -= 10, End Task
+
+User: left by 15
+Output: X -= 15, End Task
+
+User: right by 30
+Output: X += 30, End Task
+
+User: right by 13
+Output: X += 13, End Task
+
