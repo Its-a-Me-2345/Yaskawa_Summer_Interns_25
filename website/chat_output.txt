@@ -4,3 +4,9 @@ Output: Z += 20, Z -= 20, End Task
 User: move up 20
 Output: Z += 20, End Task
 
+User: move right 60
+Output: X += 60, End Task
+
+User: move down 20
+Output: Z -= 20, End Task
+
