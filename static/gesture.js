@@ -4,6 +4,7 @@ const config = {
 
 let videoWidth, videoHeight, drawingContext, canvas, gestureEstimator;
 let model;
+let lastLoggedGesture = null; // 🟢 Track last gesture here
 
 const gestureStrings = {
   'victory': '✌️ X axis → +',
@@ -104,7 +105,7 @@ async function loadVideo() {
 
 // 👉 Custom Gesture Definitions
 function createYoGesture() {
-  const g = new fp.GestureDescription('yo'); // fixed name
+  const g = new fp.GestureDescription('yo');
   g.addCurl(fp.Finger.Thumb, fp.FingerCurl.NoCurl, 1.0);
   g.addCurl(fp.Finger.Index, fp.FingerCurl.NoCurl, 1.0);
   g.addCurl(fp.Finger.Pinky, fp.FingerCurl.NoCurl, 1.0);
@@ -114,7 +115,7 @@ function createYoGesture() {
 }
 
 function createThumbsUpGesture() {
-  const g = new fp.GestureDescription('thumbs_up'); // fixed name
+  const g = new fp.GestureDescription('thumbs_up');
   g.addCurl(fp.Finger.Thumb, fp.FingerCurl.NoCurl, 1.0);
   g.addDirection(fp.Finger.Thumb, fp.FingerDirection.VerticalUp, 1.0);
   for (let f of [fp.Finger.Index, fp.Finger.Middle, fp.Finger.Ring, fp.Finger.Pinky]) {
@@ -124,7 +125,7 @@ function createThumbsUpGesture() {
 }
 
 function createThumbsDownGesture() {
-  const g = new fp.GestureDescription('thumbs_down'); // fixed name
+  const g = new fp.GestureDescription('thumbs_down');
   g.addCurl(fp.Finger.Thumb, fp.FingerCurl.NoCurl, 1.0);
   g.addDirection(fp.Finger.Thumb, fp.FingerDirection.VerticalDown, 1.0);
   for (let f of [fp.Finger.Index, fp.Finger.Middle, fp.Finger.Ring, fp.Finger.Pinky]) {
@@ -157,7 +158,12 @@ async function continuouslyDetectLandmarks(video) {
         let res = est.gestures.reduce((p, c) => (p.score > c.score ? p : c));
         document.getElementById('gesture-text').textContent =
           gestureStrings[res.name] || res.name;
-        logGestureCommand(res.name);
+
+        // ✅ Only log gesture if it has changed
+        if (res.name !== lastLoggedGesture) {
+          logGestureCommand(res.name);
+          lastLoggedGesture = res.name;
+        }
       }
     }
 
