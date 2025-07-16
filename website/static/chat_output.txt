@@ -1,6 +1,0 @@
-User: move up by 20 then down by 16
-Output: Z += 20, Z -= 16, End Task
-
-User: move to the left by 18 and up by 16
-Output: label, X -= 18, Z += 16, End Task
-
