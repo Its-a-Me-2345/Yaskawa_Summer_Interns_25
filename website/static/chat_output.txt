@@ -1,0 +1,9 @@
+User: move up by 20
+Output: Z += 20, End Task
+
+User: move to the right by 15
+Output: label, X += 15, End Task
+
+User: move to the left by 10 and then down by 20
+Output: label, X -= 10, Z -= 20, End Task
+
