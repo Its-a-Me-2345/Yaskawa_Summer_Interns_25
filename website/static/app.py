@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,jsonify
 import csv
 import os
 from datetime import datetime
+from model_utils import model, tokenizer, device, evaluate
+from chat_utils import append_chat_to_file, extract_increments, write_csv, git_push
+import os
 
 app = Flask(__name__)
 
@@ -25,6 +28,30 @@ def about():
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html')
+
+@app.route('/chatbot/api', methods=['POST'])
+def chatbot_api():
+    try:
+        user_input = request.json.get("message")
+        print("User input:", user_input)
+
+        output = evaluate(model, tokenizer, user_input, device)
+        print("Model output:", output)
+
+        append_chat_to_file(user_input, output)
+        increments = extract_increments()
+        write_csv(increments)
+
+        try:
+            git_push()
+        except Exception as e:
+            print("Git push failed:", e)
+
+        return jsonify({"response": output})
+    except Exception as e:
+        print("🔥 Error in /chatbot/api:", e)
+        return jsonify({"response": "Internal error occurred."}), 500
+
 
 @app.route('/control')
 def control():
