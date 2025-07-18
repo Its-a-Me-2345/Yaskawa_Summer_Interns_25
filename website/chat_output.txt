@@ -1,6 +1,0 @@
-User: move up 20
-Output: Z += 20, End Task
-
-User: go left 25 then down 20
-Output: X -= 25, Z -= 20, End Task
-
