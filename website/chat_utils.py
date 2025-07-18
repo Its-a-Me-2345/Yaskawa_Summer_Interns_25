@@ -15,26 +15,22 @@ def extract_increments(path="chat_output.txt"):
                 output_line = line.replace("Output:", "").strip().replace("End Task", "")
                 parts = output_line.split(",")
 
+                x, y, z = 0, 0, 0
                 for part in parts:
                     part = part.strip()
                     if part.startswith("X +="):
-                        val = int(part.split("+=")[1].strip())
-                        increments.append((val, 0, 0))
+                        x += int(part.split("+=")[1].strip())
                     elif part.startswith("X -="):
-                        val = int(part.split("-=")[1].strip())
-                        increments.append((-val, 0, 0))
+                        x -= int(part.split("-=")[1].strip())
                     elif part.startswith("Y +="):
-                        val = int(part.split("+=")[1].strip())
-                        increments.append((0, val, 0))
+                        y += int(part.split("+=")[1].strip())
                     elif part.startswith("Y -="):
-                        val = int(part.split("-=")[1].strip())
-                        increments.append((0, -val, 0))
+                        y -= int(part.split("-=")[1].strip())
                     elif part.startswith("Z +="):
-                        val = int(part.split("+=")[1].strip())
-                        increments.append((0, 0, val))
+                        z += int(part.split("+=")[1].strip())
                     elif part.startswith("Z -="):
-                        val = int(part.split("-=")[1].strip())
-                        increments.append((0, 0, -val))
+                        z -= int(part.split("-=")[1].strip())
+                increments.append((x, y, z))
     return increments
 
 def write_csv(increments, csv_path="movement_increments.csv"):
