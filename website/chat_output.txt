@@ -4,3 +4,6 @@ Output: X += 20, Z += 30, End Task
 User: move 50 down and right 60
 Output: label, Z -= 50, End Task
 
+User: right 60
+Output: X += 60, End Task
+
