@@ -1,3 +1,3 @@
-User: move up 20 then move left 30
+User: move up 20 then left 30
 Output: Z += 20, X -= 30, End Task
 
