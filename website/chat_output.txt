@@ -1,3 +1,6 @@
 User: move up 20 then move left 15
 Output: Z += 20, X -= 15, End Task
 
+User: come forward 17 and down 3
+Output: Y += 17, Z -= 3, End Task
+
