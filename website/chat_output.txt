@@ -1,3 +1,3 @@
-User: move up 20 and move foward 30 and move right 60
-Output: Z += 20, Y += 30, X += 60, End Task
+User: move up 60 move left 50 move forward 40
+Output: Z += 60, X += 40, End Task
 
