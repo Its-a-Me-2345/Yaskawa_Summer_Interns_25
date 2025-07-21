@@ -7,3 +7,6 @@ Output: X -= 50, End Task
 User: move forward 40
 Output: Y += 40, End Task
 
+User: move up 75 then move right 35 and come forward 50
+Output: Z += 75, X += 35, Y += 50, End Task
+
