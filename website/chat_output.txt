@@ -4,3 +4,6 @@ Output: Z += 600, X -= 200, End Task
 User: move to the right by 700 and then up 200
 Output: label, X += 700, Z += 200, End Task
 
+User: come forward 500 and move right 99 and up 69
+Output: label, Y += 500, X += 99, End Task
+
