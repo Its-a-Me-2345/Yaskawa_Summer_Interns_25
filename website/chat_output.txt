@@ -1,24 +1,3 @@
-User: move up 600 and then left 200
-Output: Z += 600, X -= 200, End Task
-
-User: move to the right by 700 and then up 200
-Output: label, X += 700, Z += 200, End Task
-
-User: come forward 500 and move right 99 and up 69
-Output: label, Y += 500, X += 99, End Task
-
-User: back 500 and left 99
-Output: label, End Task
-
-User: move back 500
-Output: Z -= 500, End Task
-
-User: move left 99
-Output: X -= 99, End Task
-
-User: move forward 500 and move right 99 and move up 69
-Output: Y += 500, X += 99, Z += 69, End Task
-
-User: -1
-Output: X += 1, End Task
+User: move up 200
+Output: Z += 200, End Task
 
