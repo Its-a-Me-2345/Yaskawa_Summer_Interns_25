@@ -1,21 +1,3 @@
-User: move up 60 move left 50 move forward 40
-Output: Z += 60, X += 40, End Task
-
-User: moce left 50
-Output: X -= 50, End Task
-
-User: move forward 40
-Output: Y += 40, End Task
-
-User: move up 75 then move right 35 and come forward 50
-Output: Z += 75, X += 35, Y += 50, End Task
-
-User: move left 90 and down 30
-Output: X -= 90, Z -= 30, End Task
-
-User: move right 40 and up 40
-Output: label, X += 40, End Task
-
-User: up 40
-Output: Z += 40, End Task
+User: move left 56 and then come forward 75
+Output: X -= 56, Y += 75, End Task
 
