@@ -13,3 +13,6 @@ Output: Z += 75, X += 35, Y += 50, End Task
 User: move left 90 and down 30
 Output: X -= 90, Z -= 30, End Task
 
+User: move right 40 and up 40
+Output: label, X += 40, End Task
+
