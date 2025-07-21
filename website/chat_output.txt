@@ -19,3 +19,6 @@ Output: X -= 99, End Task
 User: move forward 500 and move right 99 and move up 69
 Output: Y += 500, X += 99, Z += 69, End Task
 
+User: -1
+Output: X += 1, End Task
+
