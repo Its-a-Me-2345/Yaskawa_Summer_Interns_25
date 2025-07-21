@@ -4,3 +4,6 @@ Output: Z += 60, X += 40, End Task
 User: moce left 50
 Output: X -= 50, End Task
 
+User: move forward 40
+Output: Y += 40, End Task
+
