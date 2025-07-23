@@ -55,3 +55,12 @@ Output: X += 30, End Task
 User: right by 13
 Output: X += 13, End Task
 
+User: move up 20
+Output: Z += 20, End Task
+
+User: move up 69
+Output: Z += 69, End Task
+
+User: move left 84 then up 23
+Output: X -= 84, Z += 23, End Task
+

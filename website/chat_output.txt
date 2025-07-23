@@ -1,3 +1,0 @@
-User: move left 56 and then come forward 75
-Output: X -= 56, Y += 75, End Task
-
